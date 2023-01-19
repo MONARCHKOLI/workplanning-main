@@ -1,0 +1,11 @@
+<h1>Name:<%= @worker.name.capitalize %></h1>
+<h1>Shift Timing :<%= @worker.shift %></h1>
+<h1>Shift Date :<%= @worker.date %></h1>
+
+
+
+<%= link_to "Edit", edit_worker_path(@worker) %>
+<%= link_to "Delete" ,worker_path(@worker),data:{
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"
+      }%>

@@ -1,0 +1,25 @@
+<%= form_with model: @worker do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+  <% @worker.errors.full_messages_for(:name).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <div>
+    <%= form.label :shift %><br>
+    <%= form.select :shift,["Shift-1[0-8]","Shift-2[8-16]","Shift-3[16-24]"] %>
+  </div>
+  <div>
+    <%= form.label :date %><br>
+    <%= form.date_field :date %>
+  </div>
+  <% @worker.errors.full_messages_for(:date).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
